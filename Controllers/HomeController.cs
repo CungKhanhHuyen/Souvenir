@@ -17,6 +17,7 @@ namespace Souvenir.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.categoryProduct = _context.Categories.ToList();
             return View();
         }
 
