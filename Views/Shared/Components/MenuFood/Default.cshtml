@@ -1,10 +1,14 @@
 ﻿@model IEnumerable<Souvenir.Models.Product>
 @foreach(var h in Model)
 {
+    string Url = $"/product/{h.Alias}-{h.ProductId}.html";
     <div class="col-md-6 col-lg-4 col-xl-3">
         <div class="rounded position-relative fruite-item">
             <div class="fruite-img">
-                <img src="@h.ImageUrl" style="width: 200px; height: 200px;" class="img-fluid w-100 rounded-top" alt="">
+                <a href="@Url">
+                    <img src="@h.ImageUrl" style="width: 200px; height: 200px;" class="img-fluid w-100 rounded-top" alt="">
+                </a>
+               
 			</div>
 
             <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">HuyenBaby</div>
