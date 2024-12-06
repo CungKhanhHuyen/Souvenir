@@ -20,6 +20,10 @@ namespace Souvenir.Controllers
             ViewBag.categoryProduct = _context.Categories.ToList();
             return View();
         }
+        public IActionResult Product()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
