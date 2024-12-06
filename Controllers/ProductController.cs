@@ -28,6 +28,7 @@ namespace Souvenir.Controllers
                 return NotFound();
 
             }
+            ViewBag.productRealated = _context.Products.Where(i => i.ProductId != id && i.CategoryId == productItem.CategoryId).ToList();
             return View(productItem);
         }
     }
