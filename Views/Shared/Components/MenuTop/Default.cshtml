@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Souvenir.Models.Menu>
 @foreach(var h in Model)
 {
-    <a href="@h.Url" class="nav-item nav-link active">@h.MenuName</a>
+    <a href="/Home/@h.Url" class="nav-item nav-link active">@h.MenuName</a>
 }
