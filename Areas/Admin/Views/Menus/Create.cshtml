@@ -1,0 +1,58 @@
+﻿@model Souvenir.Models.Menu
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Menu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group row">
+                <label asp-for="MenuName" class="col-sm-3 col-form-label">Menu Name</label>
+                <div class="col-sm-9">
+                    <input asp-for="MenuName" class="form-control" />
+                    <span asp-validation-for="MenuName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Alias" class="col-sm-3 col-form-label">Alias</label>
+                <div class="col-sm-9">
+                    <input asp-for="Alias" class="form-control" />
+                    <span asp-validation-for="Alias" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Url" class="col-sm-3 col-form-label">URL</label>
+                <div class="col-sm-9">
+                    <input asp-for="Url" class="form-control" />
+                    <span asp-validation-for="Url" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="ParentId" class="col-sm-3 col-form-label">Vị Trí</label>
+                <div class="col-sm-9">
+                    <input asp-for="ParentId" class="form-control" />
+                    <span asp-validation-for="ParentId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
