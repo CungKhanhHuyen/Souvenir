@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Souvenir.Models.Contact>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="mb-4">Danh Sách Liên Lạc</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Tạo Mới</a>
+</p>
+
+<table class="table table-striped table-bordered mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>STT</th>
+            <th>Họ Tên</th>
+            <th>Email</th>
+            <th>Lời Nhắn</th>
+            <th>Ngày Liên Lạc</th>
+            <th>Hành Động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var h = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(h++)</td>
+                <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.Message)</td>
+                <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.ContactId">
+                        <i class="bi bi-pencil-square"></i> Sửa
+                    </a>
+                    <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.ContactId">
+                        <i class="bi bi-eye"></i> Xem
+                    </a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.ContactId">
+                        <i class="bi bi-trash"></i> Xóa
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
