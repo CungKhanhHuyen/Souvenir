@@ -23,7 +23,7 @@ public partial class Product
 
     public string? ImageUrl { get; set; }
 
-    public bool? IsActive { get; set; }
+    public required bool IsActive { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 
