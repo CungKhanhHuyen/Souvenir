@@ -7,11 +7,11 @@ public partial class Menu
 {
     public int MenuId { get; set; }
 
-    public string MenuName { get; set; } = null!;
+    public string? MenuName { get; set; }
 
-    public string Alias { get; set; } = null!;
+    public string? Alias { get; set; }
 
-    public string Url { get; set; } = null!;
+    public string? Url { get; set; }
 
     public int? ParentId { get; set; }
 
