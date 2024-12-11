@@ -173,8 +173,10 @@ public partial class SouvenirShopDbContext : DbContext
             entity.Property(e => e.UpdatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Product_Category");
         });
 

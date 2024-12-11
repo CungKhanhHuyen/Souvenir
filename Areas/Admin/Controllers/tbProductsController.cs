@@ -10,23 +10,23 @@ using Souvenir.Models;
 namespace Souvenir.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class ProductsController : Controller
+    public class tbProductsController : Controller
     {
         private readonly SouvenirShopDbContext _context;
 
-        public ProductsController(SouvenirShopDbContext context)
+        public tbProductsController(SouvenirShopDbContext context)
         {
             _context = context;
         }
 
-        // GET: Admin/Products
+        // GET: Admin/tbProducts
         public async Task<IActionResult> Index()
         {
             var souvenirShopDbContext = _context.Products.Include(p => p.Category);
             return View(await souvenirShopDbContext.ToListAsync());
         }
 
-        // GET: Admin/Products/Details/5
+        // GET: Admin/tbProducts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,14 +45,14 @@ namespace Souvenir.Areas.Admin.Controllers
             return View(product);
         }
 
-        // GET: Admin/Products/Create
+        // GET: Admin/tbProducts/Create
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryName");
             return View();
         }
 
-        // POST: Admin/Products/Create
+        // POST: Admin/tbProducts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -69,7 +69,7 @@ namespace Souvenir.Areas.Admin.Controllers
             return View(product);
         }
 
-        // GET: Admin/Products/Edit/5
+        // GET: Admin/tbProducts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,7 +86,7 @@ namespace Souvenir.Areas.Admin.Controllers
             return View(product);
         }
 
-        // POST: Admin/Products/Edit/5
+        // POST: Admin/tbProducts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -122,7 +122,7 @@ namespace Souvenir.Areas.Admin.Controllers
             return View(product);
         }
 
-        // GET: Admin/Products/Delete/5
+        // GET: Admin/tbProducts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -141,7 +141,7 @@ namespace Souvenir.Areas.Admin.Controllers
             return View(product);
         }
 
-        // POST: Admin/Products/Delete/5
+        // POST: Admin/tbProducts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -33,7 +33,7 @@
                 <td>@Html.DisplayFor(modelItem => item.CategoryName)</td>
                 <td>@Html.DisplayFor(modelItem => item.Alias)</td>
                 <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                <td>
+                @* <td>
                     @if (item.IsActive)
                     {
                         <span class="badge text-success">Hoạt Động</span>
@@ -42,7 +42,7 @@
                     {
                         <span class="badge text-danger">Không Hoạt Động</span>
                     }
-                </td>
+                </td> *@
                 <td>
                     <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.CategoryId">
                         <i class="bi bi-pencil-square"></i> Sửa
